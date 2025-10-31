@@ -13,9 +13,9 @@
   <img src="assets/mbzuai logo.png" height="40"/>
 </p>
 
-
+<p align="center">
 # LeukoAI — Morphology-Based Leukemia Prediction Tool
-
+</p>
 ## License
 This work is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 You may use and share the software for non-commercial research purposes with proper citation.  
