@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/leukoai logo.png" height="90"/>
+  <img src="assets/LeukoAI logo.png" height="90"/>
 </p>
 
 <h1 align="center">Leuko-AI</h1>
