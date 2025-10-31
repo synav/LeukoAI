@@ -2,8 +2,6 @@
   <img src="assets/LeukoAI logo.png" height="90"/>
 </p>
 
-<h1 align="center">Leuko-AI</h1>
-
 <p align="center">
   <strong>Hierarchical deep learning for leukemia classification from peripheral blood smear images</strong><br/>
   <em>Developed by Sheikh Shakhbout Medical City (SSMC) in collaboration with Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</em><br/>
