@@ -1,5 +1,16 @@
 # LeukoAI — Morphology-Based Leukemia Prediction Tool
 
+## License
+This work is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+You may use and share the software for non-commercial research purposes with proper citation.  
+No modifications or commercial uses are permitted.
+© 2025 Dr Syed Naveed. 
+
+Please **cite the following publication** when using the tool:
+Naveed S et al., *J Med Artif Intell*, 2025.
+
+
+
 **Developed by:** Dr Syed Naveed and team, Sheikh Shakhbout Medical City (SSMC), Abu Dhabi  
 **Collaborators:** Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI) and Hematology & Oncology Departments  
 **Version:** v1.0  |  **Build Date:** October 2025
@@ -59,8 +70,8 @@ Use is at the user’s own risk.
 If you use LeukoAI in academic work, please cite:  
 
 > Naveed S, et al. “Novel Hierarchical Deep-Learning Models Predict Type of Leukemia from Whole-Slide Microscopic Images of Peripheral Blood.”  
-> *Journal of Medical Artificial Intelligence*, 2025.   
-> DOI pending.
+> *Journal of Medical Artificial Intelligence*, March 2025.   
+> DOI: 10.21037/jmai-24-74
 
 ---
 
