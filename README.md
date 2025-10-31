@@ -1,14 +1,8 @@
-<!-- Top row with SSMC on the left and MBZUAI on the right -->
-<table style="width:100%;">
-  <tr>
-    <td style="width:50%;" align="left">
-      <img src="assets/ssmc logo.png" height="45" />
-    </td>
-    <td style="width:50%;" align="right">
-      <img src="assets/mbzuai logo.png" height="45" />
-    </td>
-  </tr>
-</table>
+<p>
+  <img src="assets/ssmc_logo.png" height="45" align="left"/>
+  <img src="assets/mbzuai_logo.png" height="45" align="right"/>
+</p>
+<br clear="both"/>
 
 <!-- Centered Leuko-AI logo and caption -->
 <p align="center">
