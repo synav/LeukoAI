@@ -1,3 +1,19 @@
+<p align="center">
+  <img src="assets/leukoai logo.png" height="90"/>
+</p>
+
+<h1 align="center">Leuko-AI</h1>
+
+<p align="center">
+  Hierarchical deep learning for leukemia classification from peripheral blood smear images
+</p>
+
+<p align="center">
+  <img src="assets/ssmc logo.png" height="40" style="margin-right:20px;"/>
+  <img src="assets/mbzuai logo.png" height="40"/>
+</p>
+
+
 # LeukoAI — Morphology-Based Leukemia Prediction Tool
 
 ## License
