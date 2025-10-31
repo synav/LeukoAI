@@ -7,11 +7,11 @@
 <p align="center">
   <strong>Hierarchical deep learning for leukemia classification from peripheral blood smear images</strong><br/>
   <em>Developed by Sheikh Shakhbout Medical City (SSMC) in collaboration with Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</em><br/>
-  Research prototype • Windows standalone (.exe) • Explainable AI for digital hematology
+  Research prototype • Windows standalone (.exe) • Explainable AI for digital hematopathology
 </p>
 
 <p align="center">
-  <img src="assets/ssmc logo.png" height="40" style="margin-right:40px;"/>
+  <img src="assets/ssmc logo.png" height="40" style="margin-right:1cm;"/>
   <img src="assets/mbzuai logo.png" height="40"/>
 </p>
 
