@@ -12,7 +12,15 @@
 </p>
 
 
+---
 
+
+## 🔍 Overview
+LeukoAI is a standalone deep-learning application that predicts leukemia and its major subtypes from peripheral-blood smear morphology images.  
+It uses a hierarchical convolutional neural-network model trained on >10 000 expert-annotated images.  
+Outputs are displayed instantly as class probabilities and diagnostic labels.
+
+---
 ## License
 This work is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 You may use and share the software for non-commercial research purposes with proper citation.  
@@ -29,14 +37,6 @@ Naveed S et al., *J Med Artif Intell*, 2025.
 **Version:** v1.0  |  **Build Date:** October 2025
 
 ---
-
-## 🔍 Overview
-LeukoAI is a standalone deep-learning application that predicts leukemia and its major subtypes from peripheral-blood smear morphology images.  
-It uses a hierarchical convolutional neural-network model trained on >10 000 expert-annotated images.  
-Outputs are displayed instantly as class probabilities and diagnostic labels.
-
----
-
 ## ⚙️ System Requirements
 - **OS:** Windows 10 or 11 (64-bit)  
 - **CPU:** Intel i5 or higher (AVX support recommended)  
