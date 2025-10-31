@@ -1,11 +1,11 @@
-<!-- Top row with SSMC (left) and MBZUAI (right) -->
-<table width="100%">
+<!-- Top row with SSMC on the left and MBZUAI on the right -->
+<table style="width:100%;">
   <tr>
-    <td align="left">
-      <img src="assets/ssmc logo.png" height="45"/>
+    <td style="width:50%;" align="left">
+      <img src="assets/ssmc logo.png" height="45" />
     </td>
-    <td align="right">
-      <img src="assets/mbzuai logo.png" height="45"/>
+    <td style="width:50%;" align="right">
+      <img src="assets/mbzuai logo.png" height="45" />
     </td>
   </tr>
 </table>
