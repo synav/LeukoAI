@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="assets/LeukoAI logo.png" height="90"/>
-  LeukoAI — Morphology-Based Leukemia Prediction Tool
+  <img src="assets/LeukoAI logo.png" height="90"/><br/>
+  <sub><strong>LeukoAI — Morphology-Based Leukemia Prediction Tool</strong></sub>
 </p>
 
 <p align="center">
