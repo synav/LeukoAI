@@ -1,17 +1,20 @@
-<p align="center">
-  <img src="assets/LeukoAI logo.png" height="90"/><br/>
-  <sub><strong>LeukoAI — Morphology-Based Leukemia Prediction Tool</strong></sub>
-</p>
+<!-- Top row with SSMC (left) and MBZUAI (right) -->
+<table width="100%">
+  <tr>
+    <td align="left">
+      <img src="assets/ssmc logo.png" height="45"/>
+    </td>
+    <td align="right">
+      <img src="assets/mbzuai logo.png" height="45"/>
+    </td>
+  </tr>
+</table>
 
+<!-- Centered Leuko-AI logo and caption -->
 <p align="center">
-  <strong>Hierarchical deep learning for leukemia classification from peripheral blood smear images</strong><br/>
-  <em>Developed by Sheikh Shakhbout Medical City (SSMC) in collaboration with Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</em><br/>
-  Research prototype • Windows standalone (.exe) • Explainable AI for digital hematopathology
-</p>
-
-<p align="center">
-  <img src="assets/ssmc logo.png" height="40" style="margin-right:1cm;"/>
-  <img src="assets/mbzuai logo.png" height="40"/>
+  <img src="assets/LeukoAI logo.png" height="100"/><br/>
+  <strong>LeukoAI — Morphology-Based Leukemia Prediction Tool</strong><br/>
+  <em>Developed by Sheikh Shakhbout Medical City (SSMC) in collaboration with Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</em>
 </p>
 
 
