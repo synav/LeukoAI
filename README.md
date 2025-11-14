@@ -1,6 +1,6 @@
 <p>
   <img src="assets/ssmc logo.png" height="45" align="left"/>
-  <img src="assets/mbzuai logo.png" height="55" align="right"/>
+  <img src="assets/mbzuai logo.png" height="65" align="right"/>
 </p>
 <br clear="both"/>
 
