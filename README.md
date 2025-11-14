@@ -89,7 +89,6 @@ If you use LeukoAI in academic work, please cite:
 ---
 
 ## 🧠 Acknowledgements
-Department of Health – Abu Dhabi for research support; King Hussein Cancer Center (Jordan) for dataset collaboration; and all hematologists and BMT physicians across the UAE who contributed clinical data.  
 Special thanks to the MBZUAI team for technical development and validation support.
 
 ---
