@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use LeukoAI, please cite the article listed under preferred-citation."
+type: software
+title: "LeukoAI: Morphology-Based Leukemia Prediction Tool"
+abstract: >-
+  Standalone Windows application that predicts the presence and type of
+  leukemia (acute vs. chronic; ALL, AML, CLL, CML) from 1000x MGG-stained
+  peripheral blood smear images using hierarchical DenseNet-121 models.
+  For research and educational use only.
+version: "1.0"
+license: CC-BY-NC-ND-4.0
+repository-code: "https://github.com/synav/LeukoAI"
+url: "https://github.com/synav/LeukoAI"
+keywords:
+  - leukemia
+  - hematology
+  - peripheral blood smear
+  - deep learning
+  - computational pathology
+authors:
+  - family-names: Naveed
+    given-names: Syed
+    orcid: "https://orcid.org/0000-0002-8172-8129"
+    affiliation: "Sheikh Shakhbout Medical City, Abu Dhabi, UAE"
+  - name: "Mohamed bin Zayed University of Artificial Intelligence"
+preferred-citation:
+  type: article
+  title: "Novel hierarchical deep learning models predict type of leukemia from whole slide microscopic images of peripheral blood"
+  # TODO: add the remaining co-authors in the same order as the published article
+  authors:
+    - family-names: Naveed
+      given-names: Syed
+      orcid: "https://orcid.org/0000-0002-8172-8129"
+  journal: "Journal of Medical Artificial Intelligence"
+  year: 2025
+  month: 3
+  doi: "10.21037/jmai-24-74"
