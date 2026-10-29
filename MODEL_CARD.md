@@ -33,14 +33,24 @@ LeukoAI is a hierarchical pipeline of three image classifiers, each a **DenseNet
 | Batch size | 32 |
 | Epochs | 300 |
 | Loss | Categorical cross-entropy |
-| Framework | PyTorch 1.13 |
+| Framework | PyTorch Lightning 1.5.5 (training); PyTorch 1.12.1 CPU (application) |
+| Selected checkpoints | Model 1 epoch 295, Model 2 epoch 178, Model 3 epoch 159 |
 
 **Weight files in the release**
 
 | File | Model |
 |---|---|
-| `new_five.ckpt` | <!-- TODO --> |
-| `del_new_bin_flip_scale.jit.ckpt` | <!-- TODO --> |
+| `del_new_bin_flip_jit_scale.ckpt` | Model 1 (2 classes: no leukemia, leukemia) |
+| `del_new_acnr_flip_scale_jit.ckpt` | Model 2 (4 classes: acute, chronic, no leukemia, reactive) |
+| `new_five.ckpt` | Model 3 (5 classes: ALL, AML, CLL, CML, no leukemia) |
+
+**Application preprocessing:** RGB → tensor → zero-pad to square → resize to 448 × 448 (bilinear, no antialiasing). No mean/standard-deviation normalisation.
+
+**Application case rule (`toolv9`):**
+1. Leukemic if more than *T* images (default *T* = 3, adjustable 0–10) are classified *leukemia* by Model 1.
+2. Chronic if two or more images are classified *chronic* by Model 2; otherwise acute.
+3. Subtype by majority of Model 3 image votes within CLL/CML or ALL/AML; ties resolve to CLL or ALL.
+Model 2's *reactive* output and the class scores are not used in the case decision.
 
 ---
 
@@ -132,7 +142,8 @@ Grad-CAM heatmaps on external images suggested the models focus on white blood c
 - **Small class counts.** CLL and CML external results (F1 1.00) rest on 3 and 4 patients and may overstate real performance.
 - **Single centre.** All data come from one hospital, one staining protocol and the same microscopes. The external validation set came from the same centre and period as the training data, so performance at other sites is unknown.
 - **Narrow input conditions.** The models have only seen 1000× MGG peripheral smear fields. The application does not check image quality, magnification or stain, and will return a prediction for any image.
-- **Single-image use.** Published patient-level results combine all fields from a slide. Predictions from a single image are less reliable (internal image-level 5-class accuracy 0.81).
+- **Few images per case.** With the default threshold, a case needs at least 4 leukemic images to be reported as leukemia; cases with few captured fields will be called *no leukemia*. Image-level 5-class accuracy was 0.81 on the internal test set.
+- **Fixed count rules.** The acute/chronic decision switches to chronic when only two images are called chronic, regardless of how many are called acute. Subtype ties resolve to ALL or CLL, including when no image voted for either subtype.
 - **Classes not covered.** APML is not reported separately. Rare subtypes, mixed-phenotype leukemias, lymphoma with blood involvement, and myelodysplastic syndromes were not studied.
 - **Population.** Adults only; the patient population of one UAE centre may not represent other populations.
 - **Label quality.** Reactive-cell labels may be inconsistent in the ground truth.

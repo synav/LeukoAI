@@ -31,7 +31,7 @@ It implements the hierarchical deep-learning pipeline described in [Naveed S et 
 1. **Step 1 – Screening:** leukemia vs. no leukemia.
 2. **Step 2 – Classification:** acute vs. chronic leukemia (3-class result), and ALL / AML / CLL / CML (5-class subtype result).
 
-Each prediction is shown as a diagnostic label with class scores.
+The app analyses all field images from one patient's slide, shows a case-level diagnosis, and saves the prediction and score for every image to a CSV file.
 
 For the full description of the data, intended use and limitations, see the **[Model Card](MODEL_CARD.md)**.
 
@@ -40,7 +40,8 @@ For the full description of the data, intended use and limitations, see the **[M
 ## Read this before using the results
 
 - **Use the right kind of image.** The models were trained only on **1000× oil-immersion, May-Grünwald-Giemsa (MGG)-stained** peripheral smear fields from adult patients. Other magnifications, stains, bone-marrow aspirates, or non-smear images will still produce a prediction, but it is not meaningful.
-- **Judge a case on several fields, not one.** The published patient-level performance was obtained by combining predictions across **all images captured from a slide**. A single image is less reliable. Review predictions from multiple representative fields of the same smear before drawing any impression.
+- **Load a whole case, not a single image.** LeukoAI analyses a **folder containing all field images from one patient's slide** and combines them into one case-level diagnosis, as in the published study. Put each patient's images in a separate folder.
+- **Capture enough fields.** With the default *Image count threshold* of 3, the app reports leukemia only when **more than 3** images are classified as leukemic. A folder with 3 or fewer images can therefore never be reported as leukemia.
 - **The 3-class result is the more reliable output.** Acute vs. chronic vs. no leukemia performed well on external data. Subtype separation between **ALL and AML is weak** (see below).
 - **Scores are not calibrated probabilities.** A high class score does not mean the stated chance that the prediction is correct.
 
@@ -69,9 +70,9 @@ Results from the published study. External validation used 2,973 images from 64 
 
 - **OS:** Windows 10 or 11 (64-bit)
 - **CPU:** Intel i5 or higher (AVX support recommended)
-- **GPU (optional):** NVIDIA CUDA-capable GPU for faster inference
 - **RAM:** ≥ 8 GB
-- **Storage:** ≈ 2 GB free space
+- **Storage:** ≈ 0.5 GB download, ≈ 1.3 GB after extraction
+- **GPU:** not used; the bundled PyTorch is CPU-only
 
 ---
 
@@ -81,8 +82,10 @@ Results from the published study. External validation used 2,973 images from 64 
 2. Optional: verify the download. In PowerShell run `Get-FileHash .\toolv9.zip -Algorithm SHA256` and compare with the checksum below.
 3. Extract the zip to a folder.
 4. Double-click `toolv9.exe`. Windows SmartScreen may show a warning because the application is not code-signed; choose **More info → Run anyway** only if you downloaded it from this repository.
-5. Load a peripheral smear image (JPEG or PNG).
-6. The application shows the predicted label and class scores.
+5. Optionally adjust the **Image count threshold** slider (default 3; see *How the case diagnosis is made*).
+6. Click **Select Folder** and choose the folder holding one patient's smear images (JPEG, PNG or TIFF).
+7. The app shows the case diagnosis and up to three **images of interest** (the fields that most influenced the result).
+8. A CSV file with the prediction for every image is saved **inside the selected folder**, named after the folder.
 
 No internet connection is required after download.
 
@@ -95,12 +98,25 @@ No internet connection is required after download.
 | File | Purpose |
 |---|---|
 | `toolv9.exe` | Main application |
-| `new_five.ckpt` | Trained model weights <!-- TODO: state which model (binary / 4-class / 5-class) --> |
-| `del_new_bin_flip_scale.jit.ckpt` | Trained model weights <!-- TODO: state which model --> |
+| `del_new_bin_flip_jit_scale.ckpt` | Model 1 – leukemia vs no leukemia (DenseNet-121, 2 classes) |
+| `del_new_acnr_flip_scale_jit.ckpt` | Model 2 – acute / chronic / no leukemia / reactive (DenseNet-121, 4 classes) |
+| `new_five.ckpt` | Model 3 – ALL / AML / CLL / CML / no leukemia (DenseNet-121, 5 classes) |
 | `*.dll`, `*.pyd` | Python runtime and dependencies |
 | `logo*.png` | Application branding |
 
-Framework: PyTorch 1.13.
+Models were trained with PyTorch Lightning 1.5.5. The application runs on Python 3.8 and PyTorch 1.12.1 (CPU). Despite the `jit` in two file names, all three are standard PyTorch Lightning checkpoints, not TorchScript files.
+
+---
+
+## How the case diagnosis is made
+
+For every image in the folder, all three models are run. The case result is then decided by counting images:
+
+1. **Leukemia or not:** if the number of images Model 1 calls *leukemia* is **greater than the threshold** (default 3), the case is leukemic; otherwise it is reported as **No leukemia**.
+2. **Acute or chronic:** if **two or more** images are called *chronic* by Model 2, the case is **chronic**; otherwise **acute**.
+3. **Subtype:** the subtype is the one with the most images by Model 3 among CLL/CML (chronic) or ALL/AML (acute). If the counts are tied, CLL or ALL is reported.
+
+Images of interest are the three images with the highest Model 1 leukemia score (acute) or Model 2 chronic score (chronic).
 
 ---
 
