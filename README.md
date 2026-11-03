@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://synav-leukoai.hf.space"><img src="https://img.shields.io/badge/Try%20it-online-2B6698" alt="Try it online"/></a>
+  <img src="https://img.shields.io/badge/Web%20tool-on%20request-2B6698" alt="Web tool available on request"/>
   <a href="https://doi.org/10.21037/jmai-24-74"><img src="https://img.shields.io/badge/Paper-JMAI%202025-blue" alt="Paper"/></a>
   <img src="https://img.shields.io/badge/Platform-Windows%2010%2F11-informational" alt="Windows"/>
   <img src="https://img.shields.io/badge/Use-Research%20only-red" alt="Research use only"/>
@@ -24,8 +24,8 @@
 > [!WARNING]
 > **For research and educational use only.** LeukoAI is not a regulated medical device and must not be used for patient care or clinical decision-making.
 
-> [!TIP]
-> **Try LeukoAI in your browser:** [synav-leukoai.hf.space](https://synav-leukoai.hf.space). Upload the field images from one smear, or load a public example case. No installation needed; images are deleted automatically. The Windows desktop app below gives the same results.
+> [!NOTE]
+> **Web version available to researchers on request.** A browser-based version of LeukoAI, which gives the same results as the Windows desktop app below, is available to invited researchers, collaborators and journal reviewers. To request access, contact Dr Syed Naveed (details under [Contact](#contact)).
 
 ---
 
