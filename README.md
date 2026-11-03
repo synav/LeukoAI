@@ -5,12 +5,16 @@
 <br clear="both"/>
 
 <p align="center">
-  <img src="assets/LeukoAI%20logo.png" height="100"/><br/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/LeukoAI_logo_dark.png">
+    <img src="assets/LeukoAI_logo.png" alt="LeukoAI" height="90">
+  </picture><br/>
   <strong>LeukoAI — Morphology-Based Leukemia Prediction Tool</strong><br/>
   <em>Developed by Sheikh Shakhbout Medical City (SSMC) in collaboration with Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</em>
 </p>
 
 <p align="center">
+  <a href="https://synav-leukoai.hf.space"><img src="https://img.shields.io/badge/Try%20it-online-2B6698" alt="Try it online"/></a>
   <a href="https://doi.org/10.21037/jmai-24-74"><img src="https://img.shields.io/badge/Paper-JMAI%202025-blue" alt="Paper"/></a>
   <img src="https://img.shields.io/badge/Platform-Windows%2010%2F11-informational" alt="Windows"/>
   <img src="https://img.shields.io/badge/Use-Research%20only-red" alt="Research use only"/>
@@ -19,6 +23,9 @@
 
 > [!WARNING]
 > **For research and educational use only.** LeukoAI is not a regulated medical device and must not be used for patient care or clinical decision-making.
+
+> [!TIP]
+> **Try LeukoAI in your browser:** [synav-leukoai.hf.space](https://synav-leukoai.hf.space). Upload the field images from one smear, or load a public example case. No installation needed; images are deleted automatically. The Windows desktop app below gives the same results.
 
 ---
 
@@ -102,7 +109,7 @@ No internet connection is required after download.
 | `del_new_acnr_flip_scale_jit.ckpt` | Model 2 – acute / chronic / no leukemia / reactive (DenseNet-121, 4 classes) |
 | `new_five.ckpt` | Model 3 – ALL / AML / CLL / CML / no leukemia (DenseNet-121, 5 classes) |
 | `*.dll`, `*.pyd` | Python runtime and dependencies |
-| `logo*.png` | Application branding |
+| `logo*.png` | Application branding (desktop app) |
 
 Models were trained with PyTorch Lightning 1.5.5. The application runs on Python 3.8 and PyTorch 1.12.1 (CPU). Despite the `jit` in two file names, all three are standard PyTorch Lightning checkpoints, not TorchScript files.
 
